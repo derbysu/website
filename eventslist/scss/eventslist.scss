@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:300,300i,400,400i,700');
+
+* {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+}
+
+.msl_eventlist {
+
+}
+
 .eventlist-item__link {
 	display: block;
 	background-color: #eee;
@@ -10,14 +21,50 @@
 
 .eventlist-item__image {
 	width: 100%;
-	padding-bottom: 56.25%;
+	padding-bottom: 56.25%; /* 16:9 */
 	position: relative;
 	background-position: 50% 50%;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
 
+.eventlist-item__title {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+
+	text-transform: uppercase;
+	font-size: 150%;
+	line-height: 100%;
+	letter-spacing: -1px;
+
+	padding: 0.5em 0 0.5em 0;
+}
+
 .eventlist-item__image > div {
 	position: absolute;
 	top: 0; bottom: 0; left: 0; right: 0;
 }
+
+.eventlist-item__meta {
+	font-size: 80%;
+}
+
+.eventlist-item__meta p {
+	margin: 0.2em 0 0 0;
+}
+
+.eventlist-item__meta:before {
+	content: "";
+	display: block;
+	height: 3px;
+	background-color: #999;
+	border-width: 0 0 0 15px;
+	border-style: solid;
+	border-color: inherit;
+	margin: 1em 0 0 0;
+	width: 25%;
+}
+
+.eventlist-item__meta { border-color: #261063; }
+[data-orgid="6024"] .eventlist-item__meta,
+[data-orgid="6013"] .eventlist-item__meta { border-color: #FF8A01; }
