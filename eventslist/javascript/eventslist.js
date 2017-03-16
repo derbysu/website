@@ -54,25 +54,23 @@ function getTimefromMSL(time) {
 
 function reformatEvents(eventlist) {
 	let html = ''
-
 	eventlist.forEach((event) => {
 		html += '<div class="eventlist-item">'+
-				'<a class="eventlist-item__link" href="#">'+
-					'<div class="eventlist-item__image" style="background-image: url('+event.image+')"><div></div></div>'+
-					'<div class="eventlist-item__content">'+
-						'<div class="eventlist-item__title">'+
-							event.title+
-						'</div>'+
-						'<div class="eventlist-item__lead">'+
-							event.lead+
-						'</div>'+
-						'<div class="eventlist-item__meta">'+
-							'<p>Posted <time datetime="" title="">'+event.date+'</time></p>'+
-						'</div>'+
-					'</div>'+
-				'</a>'+
-			'</div>'
+		'<a class="eventlist-item__link" href="#">'+
+		'<div class="eventlist-item__image" style="background-image: url('+event.image+')"><div></div></div>'+
+		'<div class="eventlist-item__content">'+
+		'<div class="eventlist-item__title">'+
+		event.title+
+		'</div>'+
+		'<div class="eventlist-item__lead">'+
+		event.lead+
+		'</div>'+
+		'<div class="eventlist-item__meta">'+
+		'<p>Posted <time datetime="" title="">'+event.date+'</time></p>'+
+		'</div>'+
+		'</div>'+
+		'</a>'+
+		'</div>'
 	})
 	document.querySelector(".msl_eventlist").innerHTML = html
 }
-
