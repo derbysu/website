@@ -1,15 +1,15 @@
-let mslevents = [].slice.call(document.querySelectorAll(".msl_eventlist .event_item"))
-let ourevents = mslevents.map((event) => {
-	let title = event.querySelector(".msl_event_name").innerText
-	let link  = event.querySelector("dt a").href
-	let org   = [ event.dataset.mslOrganisationId, event.querySelector(".msl_event_organisation").innerText ]
+const mslevents = [].slice.call(document.querySelectorAll(".msl_eventlist .event_item"))
+const ourevents = mslevents.map((event) => {
+	const title = event.querySelector(".msl_event_name").innerText
+	const link  = event.querySelector("dt a").href
+	const org   = [ event.dataset.mslOrganisationId, event.querySelector(".msl_event_organisation").innerText ]
 
-	let image = event.querySelector(".msl_event_image img")		? event.querySelector(".msl_event_image img").src.split("?")	:[null]
-	let lead  = event.querySelector('.msl_event_description') 	? event.querySelector('.msl_event_description').innerText		: null
-	let loc   = event.querySelector("msl_event_location")		? event.querySelector("msl_event_location").innerText			: null
-	let brand = event.querySelector("msl_event_brand")			? event.querySelector("msl_event_brand").innerText				: null
+	const image = event.querySelector(".msl_event_image img")		? event.querySelector(".msl_event_image img").src.split("?")	:[null]
+	const lead  = event.querySelector('.msl_event_description') 	? event.querySelector('.msl_event_description').innerText		: null
+	const loc   = event.querySelector("msl_event_location")			? event.querySelector("msl_event_location").innerText			: null
+	const brand = event.querySelector("msl_event_brand")			? event.querySelector("msl_event_brand").innerText				: null
 
-	let date  = parseMSLDate(event.querySelector('.msl_event_time').innerText)
+	const date  = parseMSLDate(event.querySelector('.msl_event_time').innerText)
 
 	return {
 		"title"	: title,
@@ -26,17 +26,17 @@ let ourevents = mslevents.map((event) => {
 reformatEvents(ourevents)
 
 function parseMSLDate(datestring) {
-	let arr = datestring.split(" ")
-	let today = new Date()
-	let day = arr[0].replace(/\D/g,'')
-	let month = getMonthFromString(arr[1])
-	let year = month < today.getMonth() ? today.getFullYear()-1 : today.getFullYear() // We're guessing here
-	let start = getTimefromMSL(arr[2])
+	const arr = datestring.split(" ")
+	const today = new Date()
+	const day = arr[0].replace(/\D/g,'')
+	const month = getMonthFromString(arr[1])
+	const year = month < today.getMonth() ? today.getFullYear()-1 : today.getFullYear() // We're guessing here
+	const start = getTimefromMSL(arr[2])
 	return new Date(year, month, day, start[0], start[1], start[2])
 }
 
 function getMonthFromString(month){
-	var d = Date.parse(month + "1, 2017")
+	const d = Date.parse(month + "1, 2017")
 	if(!isNaN(d)){
 		return new Date(d).getMonth()
 	}
@@ -45,10 +45,10 @@ function getMonthFromString(month){
 
 function getTimefromMSL(time) {
 	if (time == "noon") { return [12,0,0] }
-	let meridiem = time.substring(time.length -2) == "pm" ? 12 : 0
-	let arr = time.split(":")
-	let hh = parseInt(arr[0].replace(/\D/g,'')) + meridiem
-	let mm = arr[1] ? arr[1].replace(/\D/g,'') : 0
+	const meridiem = time.substring(time.length -2) == "pm" ? 12 : 0
+	const arr = time.split(":")
+	const hh = parseInt(arr[0].replace(/\D/g,'')) + meridiem
+	const mm = arr[1] ? arr[1].replace(/\D/g,'') : 0
 	return [hh,mm,0]
 }
 
@@ -61,7 +61,7 @@ function timeAgo(time){
 		default: time = +new Date()
 	}
 
-	var time_formats = [
+	const time_formats = [
     [60, 'seconds', 1],
     [120, '1 minute ago', '1 minute from now'],
     [3600, 'minutes', 60],
@@ -79,7 +79,7 @@ function timeAgo(time){
     [58060800000, 'centuries', 2903040000]
     ]
 
-    var seconds = (+new Date() - time) / 1000,
+    let seconds = (+new Date() - time) / 1000,
     token = 'ago', list_choice = 1
 
     if (seconds == 0) {
@@ -90,7 +90,7 @@ function timeAgo(time){
     	token = 'from now'
     	list_choice = 2
     }
-    var i = 0, format;
+    let i = 0, format;
     while (format = time_formats[i++])
     	if (seconds < format[0]) {
     		if (typeof format[2] == 'string')
@@ -124,3 +124,4 @@ function reformatEvents(eventlist) {
 	})
 	document.querySelector(".msl_eventlist").innerHTML = html
 }
+
