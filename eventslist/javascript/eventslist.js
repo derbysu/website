@@ -4,10 +4,10 @@ const ourevents = mslevents.map((event) => {
 	const link  = event.querySelector("dt a").href
 	const org   = [ event.dataset.mslOrganisationId, event.querySelector(".msl_event_organisation").innerText ]
 
-	const image = event.querySelector(".msl_event_image img")		? event.querySelector(".msl_event_image img").src.split("?")	:[null]
-	const lead  = event.querySelector('.msl_event_description') 	? event.querySelector('.msl_event_description').innerText		: null
-	const loc   = event.querySelector("msl_event_location")			? event.querySelector("msl_event_location").innerText			: null
-	const brand = event.querySelector("msl_event_brand")			? event.querySelector("msl_event_brand").innerText				: null
+	const image = event.querySelector(".msl_event_image img")	? event.querySelector(".msl_event_image img").src.split("?")	:[null]
+	const lead  = event.querySelector('.msl_event_description') 	? event.querySelector('.msl_event_description').innerText	: null
+	const loc   = event.querySelector("msl_event_location")		? event.querySelector("msl_event_location").innerText		: null
+	const brand = event.querySelector("msl_event_brand")		? event.querySelector("msl_event_brand").innerText		: null
 
 	const date  = parseMSLDate(event.querySelector('.msl_event_time').innerText)
 
@@ -86,11 +86,11 @@ function timeAgo(time){
     	return 'Just now'
     }
     if (seconds < 0) {
-    	seconds = Math.abs(seconds);
+    	seconds = Math.abs(seconds)
     	token = 'from now'
     	list_choice = 2
     }
-    let i = 0, format;
+    let i = 0, format
     while (format = time_formats[i++])
     	if (seconds < format[0]) {
     		if (typeof format[2] == 'string')
@@ -124,4 +124,3 @@ function reformatEvents(eventlist) {
 	})
 	document.querySelector(".msl_eventlist").innerHTML = html
 }
-
