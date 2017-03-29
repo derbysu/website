@@ -106,7 +106,7 @@ function reformatEvents(eventlist) {
 
 	eventlist.forEach((event) => {
 		html += '<div class="eventlist-item" data-orgid="'+event.org[0]+'">'+
-				'<a class="eventlist-item__link" href="#">'+
+				'<a class="eventlist-item__link" href="'+event.link+'">'+
 					'<div class="eventlist-item__image" style="background-image: url('+event.image+')"><div></div></div>'+
 					'<div class="eventlist-item__content">'+
 						'<div class="eventlist-item__title">'+
