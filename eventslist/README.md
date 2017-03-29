@@ -15,7 +15,8 @@ Technically the output drops an anchor tag at block level, which is valid HTML5 
       <div class="eventlist-item__title">Event Title</div>
       <div class="eventlist-item__lead">Lead text from Event Description.</div>
       <div class="eventlist-item__meta">
-        <p>happening <time datetime="Wed Mar 22 2017 09:00:00 GMT+0000 (GMT)" title="Wed Mar 22 2017 09:00:00 GMT+0000 (GMT)">6 days from now</time></p>
+        <p>happening <time datetime="Wed Mar 22 2017 09:00:00 GMT+0000 (GMT)"
+        title="Wed Mar 22 2017 09:00:00 GMT+0000 (GMT)">6 days from now</time></p>
       </div>
     </div>
   </a>
