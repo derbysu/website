@@ -1,9 +1,9 @@
 # EventsList
-This short snippet takes an MSL eventlist widget code, pulls all the information from it and then re-formats it into slightly more helpful HTML5 and then injects that back into the document in the same place as (overwriting) the original code.
+This short snippet takes an MSL eventlist widget, pulls all the information from it and then re-formats it into slightly more helpful HTML5; it then injects that back into the document in the same place in the DOM as *(overwriting)* the original code.
 
 In theory this can be dropped into any page with an MSL eventlist and will do it's thing in the background to give us slightly easier code to work with.
 
-Technically the output drops an anchor tag at block level, which is valid HTML5 but may casue issues with older specs.
+Technically the output drops an anchor tag at block level, which is valid HTML5 but may cause issues with older specs.
 
 ### Output HTML
 
@@ -28,3 +28,5 @@ Technically the output drops an anchor tag at block level, which is valid HTML5 
 
 </div>
 ```
+
+For graceful fallback it may be worth changing the target and hiding the original widget somewhere, or providing fallback CSS in case the client doesn't replace the original widget code for some reason.
