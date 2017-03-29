@@ -8,14 +8,14 @@ Technically the output drops an anchor tag at block level, which is valid HTML5 
 ```html
 <div class="eventlist-item" data-orgid="6013">
   <a class="eventlist-item__link" href="#">
-    <div class="eventlist-item__image" style="background-image: url(https://www.udsu.co.uk/asset/Event/6013/Varsity-header.jpg)">
+    <div class="eventlist-item__image" style="background-image: url(https://link.to/image.jpg)">
       <div></div>
     </div>
     <div class="eventlist-item__content">
-      <div class="eventlist-item__title">Varsity 2017</div>
-      <div class="eventlist-item__lead">Time to bring the trophy home as we head to Northampton to face our rivals in a day of sport.</div>
+      <div class="eventlist-item__title">Event Title</div>
+      <div class="eventlist-item__lead">Lead text from Event Description.</div>
       <div class="eventlist-item__meta">
-        <p>happening <time datetime="Wed Mar 22 2017 09:00:00 GMT+0000 (GMT)" title="Wed Mar 22 2017 09:00:00 GMT+0000 (GMT)">6 days ago</time></p>
+        <p>happening <time datetime="Wed Mar 22 2017 09:00:00 GMT+0000 (GMT)" title="Wed Mar 22 2017 09:00:00 GMT+0000 (GMT)">6 days from now</time></p>
       </div>
     </div>
   </a>
